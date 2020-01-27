@@ -1,0 +1,16 @@
+body{
+	background: rgb(248,251,119,100);
+
+
+	font-size:20px;
+	font-family:verdana;
+	color:pink;
+
+}
+a{
+	color:red;
+}
+
+h1, a{
+	font-size:2em;
+}
