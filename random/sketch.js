@@ -1,0 +1,1 @@
+var fishImage, cloudImage, treeImage;
