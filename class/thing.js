@@ -5,6 +5,6 @@ class Thing {
 		this.img=img;
 	}
 	draw (){
-		image (this.img, this.x,this.y);
+        image(this.img, this.x, this.y);
 	}
 }

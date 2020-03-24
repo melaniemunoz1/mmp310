@@ -1,57 +1,51 @@
-var snowflakeImage;
+var snowflakeImage, snowmanImage;
 
 
-function preload(){
-	snowflakeImage=loadImage('snowflake.png');
-	snowmanImage=loadImage('snowman.png');
-	
+function preload() {
+    snowflakeImage = loadImage("snowflake.png");
+    snowmanImage = loadImage("snowman.png");
+
 }
-var snowflakeX= [-50];
-var snowflakeY= [100];
-var numSnowflake =60;
-var snowflakeSpeedX=[];
-var snowflakeSpeedY=[];
+var snowflakes = [];
+var numSnowflake = 2;
 
-var numSnowman=3;
-var snowman=[];
 
-function setup (){
-	createCanvas(windowWidth,windowHeight);
-	let x=-50;
-	for (let i=0; i<numSnowflake; i++){
-		snowflakeX.push(x);
-		let snowflake=new Snowflake(x,y,snowflakeImage);
-		snowflakes.push(snowflake);
+var snowmen = [];
+var numSnowman = 3;
 
-		x+=width/numSnowflake+random (-100,700);
-		snowflakeY.push(random(height/3));
-		
-	}
+function setup() {
+    createCanvas(windowWidth, windowHeight);
+    noStroke();
 
-	
-}
 
-function draw(){
-	background('lightblue');
+    for (let i = 0; i < numSnowflake; i++) {
+        let x = random(width);
+        let y = random(height / 2);
+        let snowflake = new Snowflake(x, y, snowflakeImage);
+        snowflakes.push(snowflake);
+    }
 
-	noStroke();
-	fill('white');
-	rect(0, height*2/3, width,height*2/3);
-
-	for (let i = 0; i < numSnowflake; i++) {
-		image(snowflakeImage, snowflakeX[i], snowflakeY[i]);
-		snowflakeX[i]+=random(1);
-		snowflakeY[i]+=random(3,4);
-
-		
-		snowflakeY[i] += 1;
-
-		
-		if (snowflakeY[i] > height) {
-			
-			snowflakeY[i] = -snowflakeImage.height;
-		}
-	}
+    for (let i = 0; i < numSnowman; i++) {
+        let x = random(width);
+        let y = random(height / 3, height / 2);
+        let snowman = new Snowman(x, y, snowmanImage);
+        snowmen.push(snowman);
+    }
 }
 
+function draw() {
+    background('lightblue');
 
+    noStroke();
+    fill('blue');
+    rect(0, height * 2 / 3, width, height * 2 / 3);
+
+    for (let i = 0; i < numSnowflake; i++) {
+        snowflakes[i].draw();
+        snowflakes[i].update();
+    }
+    for (let i = 0; i < numSnowman; i++) {
+        snowman[i].draw();
+        snowman[i].update();
+    }
+}
