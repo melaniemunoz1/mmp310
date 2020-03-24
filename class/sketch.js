@@ -45,7 +45,7 @@ function draw() {
         snowflakes[i].update();
     }
     for (let i = 0; i < numSnowman; i++) {
-        snowman[i].draw();
-        snowman[i].update();
+        snowmen[i].draw();
+        snowmen[i].update();
     }
 }

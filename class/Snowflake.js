@@ -1,8 +1,8 @@
 class Snowflake extends Thing {
     update() {
-        this.x += 2;
-        if (this.x > width) {
-            this.x = -this.img.width;
+        this.y += 2;
+        if (this.y > width) {
+            this.y = -this.img.height;
         }
     }
 

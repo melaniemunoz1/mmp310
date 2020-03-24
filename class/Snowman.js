@@ -1,6 +1,6 @@
 class Snowman extends Thing{
     constructor(x,y,img){
-        super(x,y.img);
+        super(x,y,img);
         this.xSpeed=random(1,5);
         this.ySpeed=1;
     }
