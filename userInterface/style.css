@@ -1,0 +1,22 @@
+body{
+	margin:0;
+}
+button{
+    border: 7px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: yellow;
+    color:red;
+    font-size:18px;
+}
+
+button:hover{
+    background-color:red;
+    color:yellow;
+}
+
+button:active{
+    background-color:yellow;
+    border-color:yellow;
+    color:red;
+}

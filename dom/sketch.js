@@ -21,7 +21,9 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     noStroke();
 
-
+    var saveButton=createButton("Save Image");
+    saveButton.mousePressed(save);
+    
     for (let i = 0; i < numSnowflake; i++) {
         let x = random(width);
         let y = random(height / 2);
