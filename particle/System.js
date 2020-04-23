@@ -1,6 +1,6 @@
 class System{
     constructor(position){
-        this.origin=positon.copy();
+        this.origin=position.copy();
         this.particles=[];
     }
     add(){

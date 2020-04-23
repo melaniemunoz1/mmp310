@@ -12,12 +12,11 @@ class Particle {
         this.colorSpeed = createVector(3, 1, 1);
     }
     update() {
-        this.positon.add(this.speed);
-        this.speed.add(this.acceleration);
-        this.color.add(this.colorSpeed);
-        this.rotation.add(this.rotationSpeed);
-        this.lifespan -= 1;
-
+        this.position.add(this.speed);
+		this.speed.add(this.acceleration);
+		this.color.add(this.colorSpeed);
+		this.rotation.add(this.rotationSpeed);
+		this.lifespan -= 1;
     }
     display() {
         push();
