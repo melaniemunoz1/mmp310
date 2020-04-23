@@ -1,15 +1,15 @@
 class Particle {
     constructor(position) {
-        this.position = position.copy;
-        this.lifespan = 300;
-        this.speed = createVector(random(-0.5, 0.5), random(-1), 0);
-
-        this.acceleration = createVector(0, 0.1, 0);
-        this.rotation = createVector(random(PI), random(PI), random(PI));
-        this.rotationSpeed=createVector(random(0.01), random(0.01), random(0.01));
+        this.position = position.copy();
+        this.lifespan = 100;
+        this.speed = createVector(random(-5, 5), -3, random(-2, 2));
         
-        this.color = createVector(0, 217, 255);
-        this.colorSpeed = createVector(3, 1, 1);
+        this.acceleration = createVector(0, 0.0);
+        this.rotation = createVector(random(PI), random(PI), random(PI));
+		this.rotationSpeed = createVector(random(0.01), random(0.01), random(0.01));
+
+		this.color = createVector(random(10), random(10), random(50, 100));
+		this.colorSpeed = createVector(0, 1, 1);
     }
     update() {
         this.position.add(this.speed);
@@ -26,72 +26,70 @@ class Particle {
         rotateZ(this.rotation.z);
 
         
-        specularMaterial(this.color.x, this.color.y, this.color.z, 200);
-        shininess(20);
+        
+        shininess(100);
         
         
        //bear
          //head
-    sphere(150);
+    sphere(15);
     
     //ear
     push();
     rotateZ(PI * 0.8);
-    translate(40, 140, 0);
-    sphere(80, 80);
+    translate(4, 14, 0);
+    sphere(8, 8);
     pop();
     
     //ear
     push()
-    translate(100, -90);
+    translate(10, -9);
     rotateZ(PI * 1.2);
-    sphere(80, 80);
+    sphere(8, 8);
     pop();
 
-    specularMaterial(0, 217, 255);
+    //specularMaterial(0, 217, 255);
     
     //left eye
     push();
-	translate(-40,-30,150);;
+	translate(-4,-3,15);;
 	rotateX(PI * 0.1);
 	rotateY(PI * -0.1);
-	torus(40, 10);
+	torus(4, 0);
 	pop();
     
-    specularMaterial(72, 0, 111);
+    //specularMaterial(72, 0, 111);
     // right eye
     push();
-	translate(50, -25, 150);
+	translate(5, -2.5, 15);
 	rotateX(PI * 0.1);
 	rotateY(PI * -0.1);
-	torus(20, 10);
+	torus(2, 0);
 	pop();
-    
-    // right eyeball
-	ambientMaterial(0, 217, 255);
-	push();
-    translate(50, -25, 150);
-	sphere(20);
-    pop();
-    
-    //left eyeball
-    specularMaterial(186, 69, 255);
-    push();
-	translate(-40,-30,150);
-	sphere(40);
-	pop();
+
+   
     
     //nose
     ambientMaterial(146, 82, 0);
     push();
-    translate(0,50,150);
-    sphere(20);
+    translate(0,5,15);
+    sphere(2);
     pop();
 
-        
+    for (let x = -10; x < 10; x += 4) {
+			push();
+			translate(x, 0, 0);
+			box(3, 6);	
+			pop();
+		}
+		pop();
 
-    }
-    isDead() {
-        return this.lifespan < 0;
-    }
+
+		// end composition
+		pop();
+	}
+
+	isDead() {
+		return this.lifespan < 0;
+	}
 }

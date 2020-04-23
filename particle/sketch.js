@@ -13,6 +13,7 @@ function draw() {
 
 	directionalLight(450, 400, 200, 1, 1, -10);
     pointLight(105, 155, 255, mouseX - width / 3, mouseY - height / 2, 300);
+    ambientMaterial(241, 162, 62 );
 
 	particleSystem.add();
 	particleSystem.update();
