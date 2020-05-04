@@ -1,7 +1,13 @@
 var music;
+var boings= [];
+var hits=[];
 
 function preload(){
     music=loadSound('Yung_Kartz_-_09_-_Glide.mp3');
+    
+    boings.push(loadSound('boing.wav'));
+    boings.push(loadSound('boing2.wav'));
+    
 }
     
 
@@ -41,6 +47,7 @@ function draw() {
     push();
     stroke('lightblue');
     noFill();
+   shininess(500);
     sphere(sphereSize);
     pop();
 

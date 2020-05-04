@@ -10,6 +10,8 @@ class Particle {
 
 		this.color = createVector(random(10), random(10), random(50, 100));
 		this.colorSpeed = createVector(0, 1, 1);
+        
+        random(boings).play();
     }
     update() {
         this.position.add(this.speed);
@@ -23,12 +25,14 @@ class Particle {
             this.position.x > sphereSize/2){
             this.speed.x *= -1;
             this.acceleration.x *= -1
+            random(boings).play();
         }
         
         if (this.position.z < -sphereSize/2 || 
             this.position.z > sphereSize/2){
             this.speed.z *= -1;
             this.acceleration.z *= -1
+            random(boings).play();
         }
         
         
@@ -37,6 +41,7 @@ class Particle {
             this.position.y > sphereSize/2) {
             this.speed.y *= -1;
             this.acceleration.y *= -1
+            random(boings).play();
         }
         
         
